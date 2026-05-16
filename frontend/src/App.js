@@ -7,9 +7,12 @@ const App = () => {
   const [students, setStudents] = useState([]);
   const [editingStudent, setEditingStudent] = useState(null);
 
+  // Backend URL deployed on Render
+  const API_URL = 'https://t140100351-1.onrender.com/api/students';
+
   // Fetch all students
   const fetchStudents = () => {
-    fetch('http://localhost:8080/api/students')
+    fetch(API_URL)
       .then((res) => res.json())
       .then((data) => setStudents(data))
       .catch((err) => console.error('Error fetching students:', err));
@@ -21,9 +24,11 @@ const App = () => {
 
   // Add student
   const addStudent = (student) => {
-    fetch('http://localhost:8080/api/students', {
+    fetch(API_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(student),
     })
       .then((res) => res.json())
@@ -33,9 +38,11 @@ const App = () => {
 
   // Update student
   const updateStudent = (student) => {
-    fetch(`http://localhost:8080/api/students/${student.id}`, {
+    fetch(`${API_URL}/${student.id}`, {
       method: 'PUT',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify(student),
     })
       .then((res) => res.json())
@@ -48,7 +55,7 @@ const App = () => {
 
   // Delete student
   const deleteStudent = (id) => {
-    fetch(`http://localhost:8080/api/students/${id}`, {
+    fetch(`${API_URL}/${id}`, {
       method: 'DELETE',
     })
       .then(() => fetchStudents())
@@ -68,12 +75,14 @@ const App = () => {
   return (
     <div className="container">
       <h1>Student Management System</h1>
+
       <StudentForm
         addStudent={addStudent}
         updateStudent={updateStudent}
         editingStudent={editingStudent}
         clearEditing={clearEditing}
       />
+
       <StudentList
         students={students}
         editStudent={editStudent}
