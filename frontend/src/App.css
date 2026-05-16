@@ -1,0 +1,107 @@
+/* General container styling */
+.container {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Center heading */
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+/* Card style for forms and student cards */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* Full width input fields */
+input.full-width {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Button group container */
+.button-group {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+/* Buttons styling */
+button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Add button - blue */
+.btn-blue {
+  background-color: #007bff;
+  color: white;
+}
+.btn-blue:hover {
+  background-color: #0056b3;
+}
+
+/* Edit button - green */
+.btn-green {
+  background-color: #28a745;
+  color: white;
+}
+.btn-green:hover {
+  background-color: #1e7e34;
+}
+
+/* Delete button - red */
+.btn-red {
+  background-color: #dc3545;
+  color: white;
+}
+.btn-red:hover {
+  background-color: #a71d2a;
+}
+
+/* Clear button - gray */
+.btn-gray {
+  background-color: #6c757d;
+  color: white;
+}
+.btn-gray:hover {
+  background-color: #565e64;
+}
+
+/* Student list container */
+.student-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+  }
+  .button-group {
+    flex-direction: column;
+  }
+  button {
+    width: 100%;
+  }
+}
