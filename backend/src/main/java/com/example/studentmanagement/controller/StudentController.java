@@ -10,10 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/students")
-@CrossOrigin(origins = {
-    "http://localhost:3000",
-    "https://t140100351.vercel.app"
-}) // Allow React frontend
+@CrossOrigin(origins = "*") // Allow React frontend
 public class StudentController {
 
     @Autowired
